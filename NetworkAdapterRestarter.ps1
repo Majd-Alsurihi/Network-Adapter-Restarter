@@ -8,7 +8,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 # Get all network adapters (excluding disconnected)
-$adapters = Get-NetAdapter | Where-Object { $_.Status -ne 'Disconnected' }
+$adapters = Get-NetAdapter 
 
 if ($adapters.Count -eq 0) {
     Write-Host "No network adapters found."
